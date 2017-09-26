@@ -4,6 +4,7 @@ class Pokemon
   attr_accessor :type, :id, :name, :db, :hp
 
   def initialize(id:, name:, type:, db:, hp:nil)
+    binding.pry
     @id = id
     @name = name
     @type = type
