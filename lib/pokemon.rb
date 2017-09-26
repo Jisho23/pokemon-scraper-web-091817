@@ -1,13 +1,14 @@
 require "pry"
 
 class Pokemon
-  attr_accessor :type, :id, :name, :db
+  attr_accessor :type, :id, :name, :db, :hp
 
-  def initialize(id:, name:, type:, db:)
+  def initialize(id:, name:, type:, db:, :hp=nil)
     @id = id
     @name = name
     @type = type
     @db = db
+    @hp = hp
   end
 
   def self.save(current_name, current_type, current_db)
@@ -19,4 +20,8 @@ class Pokemon
     pokemon_info = db.execute("SELECT * FROM pokemon WHERE id=(?)", id).flatten
     self.new(id: pokemon_info[0], name: pokemon_info[1], type: pokemon_info[2], db: db)
   end
+
+  def alter_hp(hp, db)
+    current_db.alter_hp
+  end 
 end
