@@ -8,7 +8,7 @@ class Pokemon
     @name = name
     @type = type
     @db = db
-    db.execite("IF COL_LENGTH(pokemon,hp) IS NULL BEGIN ALTER TABLE pokemon ADD COLUMN hp INTEGER NOT NULL DEFAULT(60)" )
+    db.execute("IF COL_LENGTH(pokemon,hp) IS NULL BEGIN ALTER TABLE pokemon ADD COLUMN hp INTEGER NOT NULL DEFAULT(60)" )
   end
 
   def self.save(current_name, current_type, current_db)
