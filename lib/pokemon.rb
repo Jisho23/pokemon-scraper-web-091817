@@ -3,13 +3,12 @@ require "pry"
 class Pokemon
   attr_accessor :type, :id, :name, :db, :hp
 
-  def initialize(id:, name:, type:, db:, hp:nil)
+  def initialize(id:, name:, type:, db:)
     binding.pry
     @id = id
     @name = name
     @type = type
     @db = db
-    @hp = hp
   end
 
   def self.save(current_name, current_type, current_db)
